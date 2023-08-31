@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var photos = ["./assets/img1.png" ,"./assets/img2.webp","./assets/img3.webp","./assets/img4.webp"];
+        function bodyLoad(){
+            for(var path of photos){
+                var img = document.createElement("img");
+                img.scr=path;
+                img.width="200";
+                img.height="200";
+                document.getElementById("Gallery").appendChild(img);
+            }
+        }
+    </script>
+</head>
+<body  onload="bodyLoad()"> 
+    <div>
+    <p id="Gallery"></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+    <script>
+        function bodyLoad(){
+            fetch("./data/flipkart.json")
+            .then(function(response){
+                    return response.json();
+            })
+            .then(function(product){
+                document.getElementById("productImage").src= product.photo;
+                document.getElementById("productTitle").innerHTML=product.title;
+                document.getElementById("productRating").innerHTML=product.rating.rate;
+                document.getElementById("productReviews").innerHTML=`${product.rating.ratings} Ratings &  ${product.rating.reviews} Reviews ` .fontcolor('gray').bold();
+                document.getElementById("productPrice").innerHTML=`&#8377; ${product.price}  &#8377; ${product. actualPrice}`;
+                for(var offer of product.offers){
+                    var li =document.createElement("li");
+                   li.innerHTML = `<span class= "bi bi-tag-fill text-success"> </span> ${offer}`;
+                   li.className= "mb-2 mt-2"
+                   document.querySelector("ul").appendChild(li);
+                }
+
+            })
+        }
+    </script>
+</head>
+<body  class="container-fluid " onload="bodyLoad()">
+    <section class="row mt-4">
+        <div class="col-3">
+                <img id="productImage" width="300" height="400">
+        </div>
+        <div class="col-9">
+                <h3 id="productTitle"></h3>
+                <div class="d-flex">
+                    <div class="bg-success text-white p-1 rounded" style="width: 60px;">
+                        <span id="productRating"></span><span class="bi bi-star-fill"></span>
+                    </div>
+                    <div class="ms-3">
+                        <span id="productReviews"></span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h1 id="productPrice"></h1>
+                </div>
+                <div>
+                    <h3>Offers</h3>
+                    <ul>
+
+                    </ul>
+                </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<script>
+  /*function printNumbers(){
+
+            for(var i =0;i<=10;i++){
+                document.write(i);
+            }
+        }
+        printNumbers();
+
+  function printNumbers(n) {
+    document.write(n);
+    if (n == 10) {
+      return;
+    }
+
+    n++;
+
+    printNumbers(n);
+  }
+  printNumbers(1);*/
+
+
+  function printFactorial(n){
+        if( n < 1)
+        {
+            return 1;
+        }
+        return n* printFactorial(n-1);
+
+         
+        
+  }
+  document.write(printFactorial(5));
+</script>

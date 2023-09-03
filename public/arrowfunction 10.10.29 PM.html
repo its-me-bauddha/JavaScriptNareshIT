@@ -1,0 +1,35 @@
+<script>
+   /* fetch(`http://fakestoreapi.com/products`)
+    .then(response => response.json())
+    .then(products =>{
+        products.map(product=> document.write(`<p>${product.title} </p>`))
+    }) 
+
+    function Outer (){
+        var x = 10;
+        function Inner (){
+            document.write(`X : ${x}`);
+        }
+        Inner();
+    }
+    Outer();
+
+    function Demo(){
+        return 1;
+        return 2;
+        return 3;  
+    }
+    document.write(Demo());*/ 
+
+
+    //function generator 
+
+
+    function* Demo(){
+        yield 1;
+        yield 2;
+        yield 3;
+
+    }
+    document.write(Demo().next().done);
+</script>

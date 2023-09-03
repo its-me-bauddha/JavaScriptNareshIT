@@ -1,0 +1,63 @@
+<script>
+  /*  //normal function
+    function Product(id,name,price,stock){
+
+        document.write(`
+                id : ${id} <br>
+                name :${name} <br>
+                price : ${price} <br> 
+                stock : ${stock} <br>
+
+        `);
+    }
+
+    Product(1 , "TV" , 4566 ,true);
+
+
+    //function using rest parameter 
+
+    function Product(...details){
+        var [id ,name,price,stock] = details;  //destructuring of array
+        document.write(`
+                id : ${id} <br>
+                name :${name} <br>
+                price : ${price} <br> 
+                stock : ${stock} <br>
+
+        `);
+    }
+
+    Product(1 , "TV" , 4566 ,true);
+
+
+
+    //spread syntax 
+
+    function Product(id,name,price,stock){
+
+        document.write(`
+                id : ${id} <br>
+                name :${name} <br>
+                price : ${price} <br> 
+                stock : ${stock} <br>
+
+        `);
+    }
+    var values=[1 , "TV" , 4566 ,true];
+    Product(...values);
+
+    //Product(...[1 , "TV" , 4566 ,true]);*/
+
+    function Print(a,b,c,d){
+        document.write(`
+            A: ${a} <br>
+            B: ${b} <br>
+            C: ${c} <br>
+            D: ${d} <br>
+        `);
+    }
+
+    var values = [10,20,30];
+    Print(...values,40);
+
+</script>

@@ -1,0 +1,18 @@
+<script>
+     function verifyPassword(password,success,failure){
+
+        if(password=="admin"){
+            success();
+        }
+        else{
+            failure();
+        }
+     }
+
+     verifyPassword("admin" ,function(){
+        document.write("password match");
+     },
+     function(){
+        document.write("password not match!! ");
+     })
+</script>

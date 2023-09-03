@@ -1,0 +1,27 @@
+<script>
+
+    //impure function 
+
+    /*var c = 0;
+    function Addition(a,b){
+            c = a+b ;
+    }
+
+    function Result(){
+            document.write(`Addition = ${c}`);
+    }
+
+    Addition(10,20);
+    Result();   
+     */
+
+
+    //pure function 
+    function Addition (a,b){
+        return a+b;
+    }
+    function Result(){
+        document.write(`Addition : ${Addition(10,20)} `);
+    }
+    Result(); 
+</script>

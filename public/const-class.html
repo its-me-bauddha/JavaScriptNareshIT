@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Database {
+            ConnectionStatus = true;
+
+            constructor(dbname){
+               if(this.ConnectionStatus==true){
+                document.write(`connected with ${dbname} database ... <br>`)
+               }
+               else{
+                document.write(`Invalid  | Connect to the Databse !!`)
+               }
+            }
+
+            Insert(){
+                document.write(`Record Inserted ...`);
+
+            }
+            Delete(){
+                document.write(`Record Deleted ...`);
+            }
+        }
+
+        function InsertClick(){
+            var obj  = new Database(document.getElementById("lstDatabase").value);
+            if(this.ConnectionStatus){
+                obj.Insert();
+            }
+        }
+
+        function DeleteClick(){
+            var obj = new Database(document.getElementById("lstDatabase").value);
+            if(this.ConnectionStatus){
+                obj.Insert();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <select  id="lstDatabase">
+        <option>Select Database</option>
+        <option>Oracle</option>
+        <option>MySql</option>
+        <option>MongoDb</option>
+    </select>
+    <button onclick="InsertClick()">Insert</button>
+    <button onclick="DeleteClick()">Delete</button>
+</body>
+</html>

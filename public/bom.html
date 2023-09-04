@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen{
+            tr :nth-child(even){
+                background-color: lawngreen;
+            }
+            tr :nth-child(odd){
+                background-color: rgb(0, 46, 252);
+            }
+
+            th {
+                background-color: magenta;
+                color: yellow;
+            }
+        }
+
+        @media print{
+            button { 
+                display: none ;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <table width="400" style="border: 1px solid black; " >
+            <caption>Product Table</caption>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Samsung TV</td>
+                    <td>$543</td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>$434</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button onclick="window.print()">Print</button>
+                        <span class="copyright"> &copy;Copyright 2023</span>
+                    </td>
+                </tr>
+            </tfoot>
+    </table>
+    
+    <!-- <button onclick="window.open('../assets/image1.jpeg ' , 'ImagePic' , 'width = 500 height =500' )">Open</button>
+    <button onclick="window.close()">Close</button>
+    <button onclick="window.print()">Print</button> -->
+</body>
+</html>

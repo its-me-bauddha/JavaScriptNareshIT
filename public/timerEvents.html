@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*function  msg1(){
+            document.querySelector("h2").innerHTML = "hello 1"
+        }
+        function  msg2(){
+            document.querySelector("h2").innerHTML = "hello !! how r u ?"
+        }
+        function  msg3(){
+            document.querySelector("h2").innerHTML = "Welcome to the World"
+        }
+
+        function bodyLoad(){
+         
+            setTimeout(msg1,3000);
+            setTimeout(msg2,6000);
+            setTimeout(msg3,9000);
+
+        } */
+
+        clearTimeout(
+            function PrintNumbers(){
+                for(var i = 0 ; i<=10 ; i++){
+                    document.querySelector("h2").innerHTML+=i + "<br>";
+                }
+            },3000);
+
+        function bodyLoad(){
+            setInterval(PrintNumbers,2000)
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <h2 style="text-align: center;"></h2>
+</body>
+</html>

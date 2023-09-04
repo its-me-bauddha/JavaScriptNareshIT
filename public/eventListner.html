@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*var btn = document.querySelector("button");
+        btn.addEventListener("click" ,function(){
+            alert(`insert clicked `);
+        })*/
+
+        function InsertClick(obj){
+                document.write(`
+                    Button Id : ${obj.id} <br>
+                    Button name :${obj.name} <br>
+                    Button ClassName : ${obj.className} <br>
+                `)
+        }
+    </script>
+</head>
+<body>
+        <button id="btnInsert" onclick="InsertClick(this)" name="Insert" class="btn btn-primary">Insert</button>
+</body>
+</html>

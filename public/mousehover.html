@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse</title>
+    <style>
+        body {
+
+            display: flex;
+            justify-content: space-between;
+            grid-template-columns: 2fr;
+
+
+        }
+        nav div {
+            border: 1px solid blue;
+            width: 50px;
+            height: 50px;
+            padding: 2px;
+            margin-bottom: 20px;
+        }
+
+        nav div:hover{
+            cursor: grab;
+        }
+    </style>
+
+    <script>
+        function ImageHover(src){
+            document.getElementById("preview").src = src;
+        }
+    </script>
+</head>
+<body>
+    <nav>
+            <div>
+                <img onmouseover="ImageHover(this.src)" src="../assets/mob1.webp" width="50" height="50">
+            </div>
+            <div>
+                <img onmouseover="ImageHover(this.src)" src="../assets/mob2.webp" width="50" height="50">
+            </div>
+            <div>
+                <img onmouseover="ImageHover(this.src)" src="../assets/img1.png" width="50" height="50">
+            </div>
+            <div>
+                <img onmouseover="ImageHover(this.src)" src="../assets/mob4.webp" width="50" height="50">
+            </div>
+            <div>
+                <img onmouseover="ImageHover(this.src)" src="../assets/mob-5.webp" width="50" height="50">
+            </div>
+    </nav>
+    <main>
+
+            <img id="preview"  src="../assets/mob-5.webp" width="300" height="400">
+    </main>
+</body>
+</html>

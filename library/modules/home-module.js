@@ -1,5 +1,5 @@
 
-var userName ="John";
+export var userName ="John";
 
 export function printName(){
     return `Hello ! ${userName}`;

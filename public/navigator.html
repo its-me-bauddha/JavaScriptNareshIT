@@ -1,0 +1,21 @@
+<script>
+    /*document.write(
+        `
+        Browser Family : ${navigator.appName}  <br>
+        Browser Version : ${navigator.appVersion} <br>
+        Language : ${navigator.language} <br>
+        Platform : ${navigator.platform} <br>
+        Cookie Enabled : ${(navigator.cookieEnabled == true) ? "CookieEnabled": "CookieDisabled"} <br>
+
+        `
+    ) 
+
+    for(var item of navigator.plugins){
+        document.write(item.name + "<br>");
+    }*/
+
+    for(var item of navigator.mimeTypes){
+        document.write(item.type + "<br>");
+    }
+    
+</script>

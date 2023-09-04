@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.oncontextmenu = function (){
+            alert(`Right Click not allowed`);
+            return false;
+        }
+        document.onselectstart =function(){
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h2>Right Click is disable on this browser</h2>
+    <img src="../assets/image1.jpeg" width="50" height="50" ondblclick="window.open('../assets/image1.jpeg' ,'ima' ,'width= 400', 'height=400')">
+    <p>Double click to view large</p>
+</body>
+</html>

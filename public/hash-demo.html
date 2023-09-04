@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="4" />
+    <title>Document</title>
+    <style>
+        .topic{
+            width: 200px;
+            box-shadow: 2px 2px 2px gray;
+            padding: 5px;
+            margin: 10px;
+            margin-bottom: 20px;
+        }
+        .container{
+            display: flex;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            
+        }
+        li{
+            margin-right: 100px;
+        }
+        .topic:target{
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function FetchClick(){
+            var topic="";
+            var now =new Date();
+            switch(location.hash){
+                case "#html":
+                topic += "HTML Tutorial  " + now.toLocaleTimeString()   + "<br>";
+                break;
+                case "#css":
+                topic += "CSS Tutorial   " + now.toLocaleTimeString()  + "<br>";
+                break;
+                case "#js":
+                topic += "Javascript Tutorial   " + now.toLocaleTimeString()  + "<br>";
+                break;
+                case "#jq":
+                topic += "jQuery Tutorial    " + now.toLocaleTimeString()  + "<br>"; 
+                break;
+
+                default:
+                topic ="happy Sunday" 
+                break;
+            }
+            document.getElementById("topics").innerHTML +=topic;
+        }
+    </script>
+  </head>
+  <body>
+    <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#js">JavaScript</a></li>
+        <li><a href="#jq">jQuery</a></li>
+    </ul>
+    <div class="container">
+      <div class="topic" id="html">
+        <h2>HTML</h2>
+        <p>It is a markup language.</p>
+      </div>
+      <div class="topic" id="css">
+        <h2>CSS</h2>
+        <p>It defines styles for html.</p>
+      </div>
+      <div class="topic" id="js">
+        <h2>JavaScript</h2>
+        <p>It is a language for DOM </p>
+      </div>
+      <div class="topic" id="jq">
+        <h2>jQuery</h2>
+        <p>It is a library for JS </p>
+      </div>
+
+      <p>
+        <h3>Recently Viewed <button onclick="FetchClick()">Fetch</button>
+        <button onclick="location.reload()">Reload</button>
+        </h3>
+        <p id="topics"></p>
+      </p>
+    </div>
+  </body>
+</html>

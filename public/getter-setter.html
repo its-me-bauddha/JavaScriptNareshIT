@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import {Product} from "../library/modules/product.js";
+        var obj = new Product();
+        obj.UserName = prompt("Enter name ");
+        obj.Role = prompt("Enter your role  : admin | customer");
+        obj.ProductName = prompt("Enter product Name");
+        
+        if(obj.ProductName){
+            document.querySelector("p").innerHTML = `Product Name : ${obj.ProductName}`;
+        }
+        else{
+             document.querySelector("p").innerHTML= obj.Error;
+        }
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

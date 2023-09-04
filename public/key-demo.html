@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+     
+      function VerifyUserId(userid) {
+        var UserError = document.getElementById("UserError");
+        fetch("../data/user-data.json")
+          .then((res) => {
+            return res.json();
+          })
+          .then((users) => {
+            for (var user of users) {
+              if (user.UserId == userid) {
+                UserError.innerHTML = "User id is taken".fontcolor("red");
+                break;
+              } else {
+                UserError.innerHTML = "User id is available ".fontcolor(
+                  "green"
+                );
+              }
+            }
+          });
+      }
+
+      function VerifyPassword(e){
+        var pwdError = document.getElementById("pwdError");
+        if(e.keyCode >=65 || e.which >=65 && e.keyCode<=90 || e.which <= 90){
+            pwdError.style.display = "block";
+        }
+        else{
+            pwdError.style.display="none"; 
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <dl>
+      <h3>Register User</h3>
+      <dt>User Id</dt>
+      <dd>
+        <input type="text" id="UserId" onkeyup="VerifyUserId(this.value)" />
+      </dd>
+      <dd id="UserError"></dd>
+
+      <dt>Password</dt>
+      <dd><input type="password" onkeypress="VerifyPassword(event)"></dd>
+      <dd id="pwdError" style="color:goldenrod ; display:none ">
+        Warning : Caps is ON 
+      </dd>
+    </dl>
+  </body>
+</html>

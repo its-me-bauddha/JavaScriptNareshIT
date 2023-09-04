@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval</title>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            text-align: center;
+        }
+    </style>
+    <script>
+            function FetchClick(){
+                document.getElementById("btnContainer").style.display="none";
+                document.getElementById("statusContainer").style.display="block";
+                setInterval(SetCount,10);
+            }
+            var count= 0;
+            function SetCount(){
+                    count++;
+                    document.getElementById("count").innerHTML = `${count} % completed`  ;
+                    if(count == 100){
+                        document.getElementById("statusContainer").style.display= "none";
+                        document.getElementById("imageContainer").style.display = "block";
+                    }
+            }
+    </script>
+</head>
+<body >
+    <div>
+        <div id="btnContainer">
+            <button onclick="FetchClick()" class="btn btn-success">Fetch Image </button>
+        </div>
+        <div id ="statusContainer" style="display: none;"> 
+            <span class="spinner-border"></span>
+            <div>Loading...</div>
+            <p id="count"></p>
+        </div>
+        
+    </div>
+    <div id="imageContainer" style="display: none;">
+        <img src="../assets/img4.webp" width="300" height="300" >
+    </div>
+</body>
+</html>

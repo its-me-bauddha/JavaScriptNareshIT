@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Cut(){
+            document.querySelector("p").innerHTML="Removed -copied to clipboard";
+        }
+        function Copy(){
+            document.querySelector("p").innerHTML="Copied to clipboard";
+        }
+        function Paste(){
+            document.querySelector("p").innerHTML="Inserted to clipboard";
+        }
+    </script>
+</head>
+<body>
+        <textarea name="" id="msg" oncut="Cut()"  oncopy = "Copy()" onpaste = "Paste()"  cols="60" rows="30">Welcome to JavaScript Events</textarea>
+        <p></p>
+</body>
+</html>

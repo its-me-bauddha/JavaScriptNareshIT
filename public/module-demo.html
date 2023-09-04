@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module">
-        import {printName,Addition} from "../library/modules/home-module.js";
+       /* import {printName,Addition} from "../library/modules/home-module.js";
         import {GetProduct} from "../library/modules/product-module.js";
 
         document.querySelector("p").innerHTML=printName() + Addition(4,5);
@@ -15,7 +15,11 @@
 
             document.querySelector("ol").appendChild(li);
         })
-        
+        */
+
+        import * as home from "../library/modules/home-module.js";
+            document.querySelector("p").innerHTML =home.printName() + home.Addition(20,30);
+            
      </script>
 </head>
 <body>

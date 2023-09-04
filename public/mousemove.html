@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function GetPosition (x ,y){
+            var pic = document.querySelector("img");
+            pic.style.position="fixed";
+            pic.style.top= y + "px";
+            pic.style.left= x + "px";
+
+            document.getElementById("show").innerHTML =`X : ${x}px <br> Y : ${y}px <br>`;
+                                                       
+
+        }
+    </script>
+</head>
+<body onmousemove="GetPosition(event.clientX ,event.clientY)">
+    <div id="show" style="height: 1000px;">
+
+    </div>
+    <img src="../assets/butterfly1.gif" width="50px" height="50px" >
+</body>
+</html>

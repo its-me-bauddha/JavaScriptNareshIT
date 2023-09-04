@@ -1,0 +1,38 @@
+<script>
+   /* var prototype = "Employee";
+    var memory =class {
+            // employee details ...
+    }
+    if(prototype == "Employee"){
+        memory = class{
+            // employee details...
+        }
+
+    }
+    else{
+        memory =class{
+            //student details...
+        }
+    } */ 
+
+    class Product{
+            ProductId =1;
+            Name = "Tv";
+            Price = 34534;
+            Stock = true;
+            Cities = ["Delhi" , "Hyd"];
+             Rating = {Rate : 4.5 , Count : 3532};
+    }
+
+    var tv = new Product ;
+    tv.Name = prompt("Enter Name");
+    document.write(`
+                ProductId : ${tv.ProductId} <br>
+                Name : ${tv.Name} <br>
+                Price :${tv.Price} <br>
+                Stock : ${tv.Stock} <br>
+                Cities : ${tv.Cities.toString()} <br>
+                Rating : Rate : ${tv.Rating.Rate} & Count :[${tv.Rating.Count}] <br>
+
+    `)
+</script>

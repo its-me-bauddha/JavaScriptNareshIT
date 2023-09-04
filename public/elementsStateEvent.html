@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ShowTip(){
+            document.getElementById("msg").innerHTML = "Name in block letters only".fontcolor("red")
+        }
+        function ChangeCase(){
+            document.getElementById("msg").innerHTML = "";
+            var username = document.getElementById("UserName").value;
+            document.getElementById("UserName").value = username.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Name</dt>
+        <dd><input onfocus="ShowTip()" onblur="ChangeCase()" type="text" id="UserName"></dd>
+        <dd id="msg"></dd>
+    </dl>
+</body>
+</html>

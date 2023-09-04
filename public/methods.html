@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import {Product} from "../library/modules/methods.js";
+        var  obj = new Product();
+        obj.Name = prompt("Enter name");
+        obj.Price = parseFloat(prompt("Enter price"));
+        obj.Qty = parseInt(prompt("Enter Quantity"));
+        
+       document.querySelector("p").innerHTML=obj.Print();
+
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

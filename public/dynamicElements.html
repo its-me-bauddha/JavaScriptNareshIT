@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script>
+        function bodyLoad(){
+             var btn = document.createElement("button");
+             btn.innerHTML = "Dynamic Button";
+             document.querySelector(".container").appendChild(btn);
+             btn.addEventListener("click",function(){
+                alert(`dynamic button clicked`)
+             })
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+     <div class="container">
+
+     </div>
+</body>
+</html>

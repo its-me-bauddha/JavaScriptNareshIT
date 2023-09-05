@@ -1,0 +1,14 @@
+<script>
+    var http = new XMLHttpRequest();
+    //for(var property in http){
+     //   document.write(property + "<br>")
+    //}
+
+    http.open("get" , "bom.html",true);
+    http.send();
+    http.onreadystatechange = function(){
+        if(http.readyState==4){
+            document.write(http.responseText);
+        }
+    }
+</script>

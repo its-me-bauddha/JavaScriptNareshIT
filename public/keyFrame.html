@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEy-Frame</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+        @keyframes zoomIn{
+            from{
+                width: 30px;
+                height: 40px;
+
+            }
+            to{
+                width: 100px;
+                height: 150px;
+            }
+        }
+       /*img{
+            animation-name: zoomIn ;
+            animation-duration:5s;
+           
+        } */
+
+
+    </style>
+    <script>
+        function ZoomClick(){
+          var img =  document.querySelector("img");
+          img.style.animationName="zoomIn";
+          img.style.animationDuration="1s";
+          img.style.animationIterationCount="infinite";
+        }
+    </script>
+</head>
+<body>
+    <button onclick="ZoomClick()">Zoom</button>
+    <div class="container">
+        <div>
+            <img src="../assets/butterfly.jpeg" width="300" height="400">
+        </div>
+    </div>
+</body>
+</html>

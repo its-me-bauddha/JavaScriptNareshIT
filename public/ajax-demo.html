@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax </title>
+    <script>
+
+        var http= new XMLHttpRequest();
+        function GetEMI(){
+                http.open("GET" ,"bom.html" ,true);
+                http.send();
+                http.onreadystatechange = function (){
+                    if(http.readyState == 4){
+                        document.getElementById("container").innerHTML = http.responseText;
+                    }
+                }
+        }
+        function GetNASA(){
+            http.open("GET" ,"slide-show.html" ,true);
+            http.send();
+            http.onreadystatechange = function (){
+                if(http.readyState == 4){
+                    document.getElementById("container").innerHTML = http.responseText;
+                }
+            }
+    }
+    </script>
+</head>
+<body>
+    <button onclick="GetEMI()">EMI Calculator</button>
+    <button onclick="GetNASA()">NASA</button>
+
+    <hr size="3" noshade color="red">
+    <div id="container">
+
+    </div>
+</body>
+</html>

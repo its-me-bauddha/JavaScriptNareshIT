@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide Show</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    ;
+    <script>
+      var count = 0;
+      function GetProduct() {
+        count++;
+        fetch(`http://fakestoreapi.com/products/${count}`)
+          .then((res) => {
+            return res.json();
+          })
+          .then((product) => {
+            document.getElementById("title").innerHTML = product.title;
+            document.getElementById("pic").src = product.image;
+          });
+      }
+      function bodyLoad() {
+        GetProduct();
+        
+      }
+      var show;
+      function PlayClick() {
+        show = setInterval(GetProduct, 3000);
+        document.getElementById("status").innerHTML="Slide show Started".fontcolor('green');
+      }
+
+      function PauseClick(){
+        clearInterval(show);
+        document.getElementById("status").innerHTML="Slide show Paused".fontcolor("red");
+      }
+    </script>
+  </head>
+  <body
+    onload="bodyLoad()"
+    class="container-fluid d-flex justify-content-center"
+  >
+    <div class="mt-2 card w-50">
+      <div class="card-header text-center fw-bold">
+        <p id="title"></p>
+        <p id="status"></p>
+      </div>
+      <div class="card-body">
+        <img width="100%" onload="alert('new image added')" height="500px" id="pic" />
+      </div>
+      <div class="card-footer text-center">
+        <button class="btn btn-primary" onclick="PlayClick()">
+          <span class="bi bi-play"></span>
+        </button>
+        <button class="btn btn-danger" onclick="PauseClick()">
+          <span class="bi bi-pause"></span>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

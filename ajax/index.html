@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <script>
+        var http = new XMLHttpRequest();
+        function HelpClick(){
+            http.open("GET" , "../data/help.txt" ,true);
+            http.send();
+            http.onreadystatechange = function (){
+                if(http.readyState == 4){
+                    document.getElementById("container").innerHTML = http.responseText;
+                }
+            }
+        }
+
+        function ProductsClick(){
+            http.open("GET" , "../data/product.json");
+            http.send();
+            http.onreadystatechange = function (){
+                if(http.readyState == 4){
+                    var data = JSON.parse(http.responseText);
+                    document.getElementById("container").innerHTML = data;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="HelpClick()">Help</button>
+    <button onclick="ProductsClick()">Products</button>
+    <hr size="2" noshade>
+    <pre id="container">
+         
+    </pre>
+</body>
+</html>

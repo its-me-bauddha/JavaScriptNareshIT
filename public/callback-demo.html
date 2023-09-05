@@ -1,0 +1,43 @@
+<script>
+  /* 
+    =============  Using CallBack ================
+  function FetchData(url,success,failure){
+        if(url =="http://fakestoreapi.com/products"){
+            success('data fetched successfully.')
+        }
+        else{
+            failure('error ! caused in data fetching')
+        }
+
+
+    }
+
+    FetchData(prompt("Enter url"), 
+    (msg)=>{
+        document.write(`success ${msg}`)
+    },
+    (msg)=>{
+        document.write(`failure ${msg}`)
+    }); 
+
+
+       =============  Using Promises ==================
+     */
+
+       var FetchData = new Promise((resolve , reject)=>{
+        var url = prompt("Enter Url");
+        if(url == "http://fakestoreapi.com/products"){
+            resolve('url matched !!! ')
+        }
+        else{
+            reject('error ! url not matched');
+        }
+       });
+
+       FetchData.then((msg )=>{
+        document.write(` success : ${msg}`)
+       })
+       .catch((msg)=>{
+        document.write(`failure : ${msg}`)
+       })
+</script>

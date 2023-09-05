@@ -1,0 +1,4 @@
+AJAX Help 
+
+        - Asynchronous JavaScript And XML.
+        -AJAX allows web pages to be updated asynchronously by exchanging small amounts of data 

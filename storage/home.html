@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        /* ======= local storage
+        function bodyLoad(){
+            
+            var user = window.localStorage.getItem("username");
+          if(user == null){
+            location.href = "./login.html";
+
+          }
+          else
+          {
+            document.querySelector("p").innerHTML =`Hello ! ${user}`;
+          }
+          
+        }
+
+        function SignOut(){
+            window.localStorage.removeItem("username");
+            location.href ="./login.html"
+
+        } 
+
+
+        //session storage 
+        function bodyLoad(){
+            
+            var user = window.sessionStorage.getItem("username");
+          if(user == null){
+            location.href = "./login.html";
+
+          }
+          else
+          {
+            document.querySelector("p").innerHTML =`Hello ! ${user}`;
+          }
+          
+        }
+
+        function SignOut(){
+            window.localStorage.removeItem("username");
+            location.href ="./login.html"
+
+        }
+     */
+
+    </script>
+    <script>
+
+        //Cookie storage 
+        function bodyLoad(){
+            
+            var user = document.cookie;
+            var [username] = user.split(";");
+            var result = username.substring(username.indexOf("=")+1);
+
+            document.querySelector("p").innerHTML =`Hello ! ${result}`;
+        }
+
+        function SignOut(){
+          document.cookie ="";
+            location.href ="./login.html"
+
+        }
+    </script>
+</head>
+<body onload="bodyLoad()">
+    <h2>Home</h2>
+    <p></p>
+    <button onclick="SignOut()">SignOut</button>
+</body>
+</html>

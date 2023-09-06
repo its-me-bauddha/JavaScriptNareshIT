@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class  MyDialog extends HTMLElement{
+
+            constructor(){
+                super();
+                    this.caption = "some caption";
+            }
+
+            static get observedAttributes(){
+                     return  ['caption'];
+            }
+
+            attributeChangedCallBack(property ,oldValue,newValue){
+                if(oldValue==newValue)
+                {
+                    return;
+                }
+                this [property]= newValue;
+            }
+
+            connectedCallBack(){
+                 let shadow = this.shadowRoot({mode:'open'});
+                 shadow.innerHTML = `
+                 <style> 
+                    h2{
+                        text-align:'center';
+                        font-family :'Arial';
+                    }
+                        <h2> ${caption}
+                 `;
+            }
+        }
+        
+
+        function bodyLoad(){
+            customElements .define('my-dialog',MyDialog);
+            document.querySelector("div").appendChild('my-dialog');
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h2>customElements</h2>
+    <my-dialog>
+
+    </my-dialog>
+</body>
+</html>

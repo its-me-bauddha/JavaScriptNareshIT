@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        var categories = ["Electronics" , "Footwear" , "Jewelry"];
+        $(function(){
+                /*$("h1").text("jQuery");
+                $("#subtitle").html(`<b><i> Write Less - Do More </i></b>`);
+                $(".txt ").html("jQuery is a javascript library.")
+               
+
+                $("button").click(()=>{
+                    $("p").html( `Hello ! ${$("#UserName").val()}`);
+                }); */
+
+              categories.map((value)=>{
+                        $(`<li>${value} </li>`).appendTo("ol");
+                        $(`<option> ${value} </option>`).appendTo("select");
+              }) 
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <!-- <h1></h1>
+    <p id="subtitle"></p>
+    <div class="txt"></div>
+
+    Your Name : 
+    <input type="text" id="UserName"> <button>Submit</button>
+    <p> </p> -->
+
+    <ol></ol>
+    <select></select>
+</body>
+</html>

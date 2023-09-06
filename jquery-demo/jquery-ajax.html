@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Call</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function (){
+                    $.ajax({
+                        method:"get",
+                        url:"http://fakestoreapi.com/products",
+                        success:(data)=>{
+                            data.map((item)=>{
+                                $(`<li> ${item.title} <img src =${item.image} width= "50" height = "50" > </li>`).appendTo("ol");
+                            })
+                        }
+                    })
+        });
+    </script>
+</head>
+<body>
+    <ol>
+
+    </ol>
+</body>
+</html>

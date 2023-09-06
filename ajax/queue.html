@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="">
+        import {Queue} from "../library/ds/queue.js";
+
+        let collection = new Queue();
+
+        collection.enqueue("A");
+        collection.enqueue("B");
+        collection.enqueue("C");
+
+        console.log(collection.dequeue());
+        console.log(collection.size());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

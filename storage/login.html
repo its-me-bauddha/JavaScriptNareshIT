@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>  
+        /* ========= local storage ================ 
+        function LoginClick(){
+            var username = document.getElementById("UserName").value;
+            window.localStorage.setItem("username",username);
+           location.href = "./home.html";
+        }  
+
+        
+
+
+        // =============session storage ====================
+        function LoginClick(){
+            var username = document.getElementById("UserName").value;
+            window.sessionStorage.setItem("username",username);
+           location.href = "./home.html";
+        }  
+        */
+
+         // =============Cookie storage ====================
+
+         function LoginClick(){
+            var username = document.getElementById("UserName").value;
+            document.cookie = `UserName : ${username}`;
+           location.href = "./home.html";
+        }  
+
+
+    </script>
+</head>
+<body>
+    <h2>Login</h2>
+    User Name :
+    <input type="text" id="UserName"> <button onclick="LoginClick()">Login</button>
+</body>
+</html>
